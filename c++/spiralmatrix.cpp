@@ -43,7 +43,8 @@ void optimal(int matrix[4][4], int row, int clmn){
         }
 
     }
-    for(auto it:ans)
+    for(auto it:ans){
+        cout<<it<<" ";
     }
 }
 int main(){
