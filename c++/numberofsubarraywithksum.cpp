@@ -35,7 +35,24 @@ void better(int b[], int n, int Key){
 
     }
     cout<<"This result comes from better"<<endl;
-    cout<<"Number of subarray havinfg sum K is "<<count<<endl;
+    cout<<"Number of subarray having sum K is "<<count<<endl;
+}
+void optimal(int c[], int n, int key){
+    // This code has time complexity of O(N).
+    // and the space complexity is O(N) due to using a map data structure in order to solve the answer.
+    map<int,int>mpp;
+    int prefixsum=0;
+    int count=0;
+    mpp[0]=1;
+    for(int i=0;i<n;i++){
+        prefixsum=prefixsum+c[i];
+        int remove=prefixsum-key;
+        count=count+mpp[remove];
+        mpp[prefixsum]+=1;
+    }
+    cout<<"This answer comes from Optimal"<<endl;
+    cout<<"Number of subarray having sum K is "<<count<<endl;
+
 }
 int main(){
     int n,Key;
@@ -49,4 +66,5 @@ int main(){
     }
     brute(arr,n,Key);
     better(arr,n,Key);
+    optimal(arr,n,Key);
 }
