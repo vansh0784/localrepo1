@@ -13,28 +13,40 @@ void section1(int r, int c){
         ans=ans*(r-i);
         ans=ans/(i+1);
     }
-    cout<<"The element at row "<<r<<" and column "<<c<<" is "<<ans<<endl;
+    cout<<"The element at row "<<r+1<<" and column "<<c+1<<" is "<<ans<<endl;
 }
 // In Second section we have to return the
 // this will be 1  5  10   10   5   1
-void section2(int n){
-    cout<<"This is Second section of the code "<<endl;
-    cout<<"This will be our "<<n<<" row "<<endl;
-    int ans=1;
-    for(int i=0;i<n;i++){
-        ans=ans*(n-i);
-        ans=ans/(n-i+1);
-        cout<<ans<<"  ";
+int section2(int n){
+    int res=1;
+    cout<<res<<"  ";
+    vector<int>row;
+    for(int i=1;i<n;i++){
+        res=res*(n-i);
+        res=res/(i);
+        row.push_back(res);
+
     }
-    cout<<endl;
+    return row;
+}
+void section3(int n){
+    vector<vector<int>>ans;
+    for(int j=1;j<n;j++){
+        ans.push_back(section2(j));
+    }
+    for(auto it:ans){
+        cout<<it<<"  ";
+    }
+
 }
 int main(){
     int r,c;
     cout<<"Enter the row and column";
     cin>>r>>c;
     int n;
-    cout<<"Enter the row you wanna try to print ";
+    cout<<"Enter the num ";
     cin>>n;
     section1(r-1,c-1);
-    section2(n);
+    section3(n);
+
 }
