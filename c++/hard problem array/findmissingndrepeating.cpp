@@ -39,6 +39,37 @@ void better(int b[], int n){
 
 
 }
+void optimal1(int c[], int n){
+    // this approach is based on mathematic modelling
+    // this code has the time complexity of O(N) and a constant space complexity
+    int s1=0,s1n=0;
+    int s2=0,s2n=0;
+    for(int i=0;i<n;i++){
+        s1=s1+c[i];
+        s2=s2+c[i]*c[i];
+        s2n=s2n+(i+1)*(i+1);
+    }
+    s1n=(n*(n+1))/2;
+    // here we need eqn as s1-s1n
+    int val1=s1-s1n;
+    int val2=s2-s2n;
+    val2=val2/val1;
+    int x=(val1+val2)/2;
+    int y=x-val1;
+    cout<<"This answer comes from Optimal1"<<endl;
+    cout<<"{"<<x<<","<<y<<"}"<<endl;
+
+}
+void optimal2(int d[], int n){
+    int xr;
+    // Xoring all the elements of the array with 1 to ....N
+    for(int i=0;i<n;i++){
+        xr=xr^d[i];
+        xr=xr^(i+1);
+    }
+
+
+}
 int main(){
     int n;
     cout<<"Enter the size ";
@@ -49,5 +80,8 @@ int main(){
     }
     brute(arr,n);
     better(arr,n);
+    optimal1(arr,n);
+    optimal2(arr,n);
+
 
 }
