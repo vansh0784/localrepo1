@@ -4,6 +4,7 @@
 using namespace std;
 void brute(int a[],int n){
     // in this approach we use 2 loops
+    // This code has the time complexity of O(N2) which is not good and the space complexity is O(1)
     int count=0;
     for(int i=0;i<n;i++){
         for(int j=i+1;j<n;j++){
@@ -70,6 +71,7 @@ int msort(int c[], int low, int high){
     return cnt;
 }
 void optimal(int b[],int n){
+    // this code has the time complexity of O(N * log N) which is similar as merge sort but we use some space .. so the space complexity is O(N)
     int cnt=msort(b,0,n-1);
     cout<<"This answer comes from Optimal"<<endl;
     cout<<"The total no. of reverse pairs are formed are "<<cnt<<endl;
