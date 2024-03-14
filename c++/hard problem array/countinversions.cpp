@@ -29,7 +29,7 @@ int merge(int d[],int low,int mid, int high){
         else{
             temp.push_back(d[right]);
             right++;
-            cnt=(mid-left+1);
+            cnt+=(mid-left+1);
         }
     }
     while(left<=mid){
@@ -61,7 +61,7 @@ void optimal(int b[],int n){
     // In this problem we use merge sort algorithm to find out the no. of pairs formed in the array
     // Basically ... we use merge sort in order to divide the array and then compare it .. array[left]>array[right] if it gets satisfied we count it as 1 nd so on to other element
     // This code has the time complexity is O(N logn) which is same as merge sort
-    // space complexity is O(N) which is not as good nd in order to solbve the problem we manipulate the given data which is not good....
+    // space complexity is O(N) which is not as good nd in order to solve the problem we manipulate the given data which is not good....
     cout<<"This answer comes from Optimal"<<endl;
     int ans=mergesort(b,0,n-1);
     cout<<"The no. inversion pairs are "<<ans<<endl;
