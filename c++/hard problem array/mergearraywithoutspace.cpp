@@ -46,6 +46,36 @@ void brute(int a[], int b[], int n, int m){
     cout<<"This answer comes from brute"<<endl;
     printres(a,b,n,m);
 }
+void optimal_1(int c[], int d[], int n, int m){
+    // this code has the time complexity of  O(min(n,m)) + O(N logn) + O(M log n)
+    // space complexity is of O(1)
+    int start=n-1;
+    int end=0;
+    while(start>=0 && end<m){
+        if(c[start]>d[end]){
+            swap(c[start],d[end]);
+            start--,end++;
+        }
+        else{
+            break;
+        }
+    }
+    sort(c,c+n);
+    sort(d,d+m);
+    cout<<"This result is from Optimal 1"<<endl;
+    printres(c,d,n,m);
+}
+void optimal_2(int e[], int f[], int n, int m){
+    // this approach uses the shell sort concept or GAP method
+    int len=(m+n);
+    int gap=(len/2)+(len%2);
+    while(gap>0){
+        int left=0;
+        int right=gap;
+
+
+    }
+}
 int main(){
     int n,m;
     cout<<"Enter the size of array 1"<<endl;
@@ -62,5 +92,7 @@ int main(){
     for(int j=0;j<m;j++){
         cin>>brr[j];
     }
-    brute(arr,brr,n,m);
+    //brute(arr,brr,n,m);
+    optimal_1(arr,brr,n,m);
+    optimal_2(arr,brr,n,m);
 }
