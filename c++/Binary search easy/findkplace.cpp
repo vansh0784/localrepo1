@@ -11,8 +11,33 @@ void brute(int a[], int n){
         }
     }
     cout<<"This answer comes from Brute"<<endl;
-    cout<<"Answer is "<<idx<<endl;
+    cout<<"Given array has rotated "<<idx<<" times"<<endl;
 
+}
+void optimal(int b[], int n){
+    // given code has the time complexity is of O(log n) and the space complexity is of O(1).
+    int low=0,high=n-1;
+    int ans=INT_MAX,idx=-1;
+    while(low<=high){
+        int mid=(low+high)/2;
+        // right side of the array is sorted
+        if(b[low]<=b[mid]){
+            if(b[low]<ans){
+                ans=b[low];
+                idx=low;
+            }
+            low=mid+1;
+        }
+        else {
+            if(b[mid]<ans){
+                ans=b[mid];
+                idx=mid;
+            }
+            high=mid-1;
+        }
+    }
+    cout<<"This answer comes from Optimal"<<endl;
+    cout<<"Given array has rotated "<<idx<<" times"<<endl;
 }
 int main(){
     int n;
@@ -23,4 +48,5 @@ int main(){
         cin>>arr[i];
     }
     brute(arr,n);
+    optimal(arr,n);
 }
