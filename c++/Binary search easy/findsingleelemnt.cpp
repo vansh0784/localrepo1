@@ -26,6 +26,33 @@ void brute(int a[], int n){
         }
     }
 }
+void optimal(int b[], int n){
+    // In this approach we used the Binary Search
+    // the time complexity is of O(log n) and the space complexity is O(1).
+    // we trim down the search space to avoid the edge cases
+    int low=1,high=n-2;
+    int ans=-1;
+    // if the array has single element then we return that element
+    if(n==1){
+            cout<<"Answer is "<<b[n]<<endl;
+    }
+    while(low<=high){
+        int mid=(low+high)/2;
+        if(b[mid]!=b[mid+1] && b[mid-1]!=b[mid]){
+            cout<<"Answer is "<<b[mid]<<endl;
+            break;
+        }
+        // if the mid is at odd index ... we look for left element if it is equal to mid then we are on left side of the array
+        else if((mid%2==1)&& b[mid]==b[mid-1] || (mid%2==0) && b[mid]==b[mid+1]){
+            low=mid+1;
+        }
+        // else we are on the right side of the array
+        else{
+            high=mid-1;
+        }
+
+    }
+}
 int main(){
     int n;
     cout<<"Enter the size ";
@@ -35,4 +62,6 @@ int main(){
         cin>>arr[i];
     }
     brute(arr,n);
+    optimal(arr,n);
+    return 0;
 }
