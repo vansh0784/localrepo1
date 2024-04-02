@@ -11,15 +11,15 @@ int findmax(int b[], int n){
 }
 
 void brute(int a[], int n){
-    int a=findmax(a,4);
+    int k=findmax(a,4);
     cout<<"This answer comes form Brute"<<endl;
-    for(int i=1;i<a;i++){
+    for(int i=1;i<k;i++){
         int sum=0;
         for(int j=0;j<4;j++){
             sum+=ceil((double)(a[i])/(double)(i));
         }
         if(sum<=n){
-            cout<<"Answer is "<<d<<endl;
+            cout<<"Answer is "<<i<<endl;
             break;
         }
     }
@@ -51,7 +51,7 @@ int main(){
     int n;
     cout<<"Enter the threshold ";
     cin>>n;
-    int arr[4]={1,3,5,9};
+    int arr[4]={1,2,5,9};
     brute(arr,n);
     optimal(arr,n);
     return 0;
