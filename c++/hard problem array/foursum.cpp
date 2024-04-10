@@ -76,7 +76,7 @@ void optimal(int c[], int n){
             if(j>i+1 && c[j]==c[j+1]) continue;
             int k=j+1;
             int l=n-1;
-            while(k>l){
+            while(k<l){
                 long sum=c[i]+c[j];
                 sum+=c[k];
                 sum+=c[l];

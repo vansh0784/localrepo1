@@ -6,10 +6,11 @@ using namespace std;
 int brute(int n, int m){
     // we used an itertaive approach of time complexity O(M * logN) and the space complexity  is O(1).
     for(int i=1;i<=m;i++){
-        if(pow(i,n)==m){
+        int a=pow(i,n);
+        if(a==m){
             return i;
         }
-        else if(pow(i,n)>m){
+        else if(a>m){
             break;
         }
 
@@ -20,10 +21,11 @@ int optimal(int n, int m){
     int low=1,high=m;
     while(low<=high){
         int mid=(low+high)/2;
-        if(pow(mid,n)==m){
+        int a=pow(mid,n);
+        if(a==m){
             return mid;
         }
-        else if(pow(mid,n)>m){
+        else if(a>m){
             high=mid-1;
         }
         else{
