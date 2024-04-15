@@ -51,7 +51,7 @@ int main(){
     int n;
     cout<<"Enter the threshold ";
     cin>>n;
-    int arr[4]={1,2,5,9};
+    int arr[4]={8,4,2,3};
     brute(arr,n);
     optimal(arr,n);
     return 0;

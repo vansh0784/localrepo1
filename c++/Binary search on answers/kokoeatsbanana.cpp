@@ -13,7 +13,7 @@ int maxar(int b[], int n){
 int compute(int c[], int n, int hrs){
     int time=0;
     for(int i=0;i<n;i++){
-        time+=ceil(c[i]/hrs);
+        time+=ceil((double)c[i]/(double)hrs);
     }
     return time;
 }
