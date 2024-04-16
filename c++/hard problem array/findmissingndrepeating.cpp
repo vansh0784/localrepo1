@@ -67,6 +67,7 @@ void optimal2(int d[], int n){
         xr=xr^d[i];
         xr=xr^(i+1);
     }
+    // now we have to find the count the resulting bit
 
 
 }

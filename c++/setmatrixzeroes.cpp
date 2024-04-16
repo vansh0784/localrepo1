@@ -1,23 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
-void mark_row(int i){
+void mark_row(int i, int j, int c[i][j],int row){
     for(int i=0;i<n;i++){
-        if(arr[i][j]!=0){
-            arr[i][j]=-1;
+        if(c[i][j]!=0){
+            c[i][j]=-1;
         }
     }
 }
-void mark_column(int j){
-    for(int i=0;i<n;i++){
-        if(arr[][j])
+void mark_column(int j, int i, int d[i][j],int column){
+    for(int j=0;j<n;j++){
+        if(d[i][j]!=-1){
+            d[i][j]=-1;
+        }
     }
 }
 void brute(int arr[row][column], int row,int column){
     for(int i=0;i<row;i++){
         for(int j=0;j<column;j++){
             if(arr[i][j]==0){
-                mark_row(i,j);
-                mark_column(j,i);
+                mark_row(i,j,arr,row);
+                mark_column(j,i,arr,column);
             }
         }
     }
@@ -28,6 +30,14 @@ void brute(int arr[row][column], int row,int column){
             }
 
         }
+    }
+    // printing the matrix
+    for(int i=0;i<row;i++){
+        for(int j=0;j<column;j++){
+            cout<<arr[i][j]<<"  ";
+            cout<<endl;
+        }
+        cout<<endl;
     }
 }
 int main(){
@@ -42,5 +52,5 @@ int main(){
         }
     }
     // brute approach
-    brute(matrix,row,column)
+    brute(matrix,row,column);
 }

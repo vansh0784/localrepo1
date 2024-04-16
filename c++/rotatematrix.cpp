@@ -1,4 +1,10 @@
 // this problem is known as rotate matrix by 90 degree or ---> rotate image by 90 degree
+
+
+/*  1   2   3              7   4   1
+    4   5   6   ------->   8   5   2
+    7   8   9              9   6   3
+*/
 #include<bits/stdc++.h>
 using namespace std;
 // in this case time complexity is O(n2) but space complexity is O(n2)

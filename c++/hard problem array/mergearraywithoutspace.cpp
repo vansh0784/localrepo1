@@ -72,6 +72,13 @@ void optimal_2(int e[], int f[], int n, int m){
     while(gap>0){
         int left=0;
         int right=gap;
+        while(left<n && right<m){
+            if(e[left]>=f[right]){
+                swap(e[left],f[right]);
+                left++,right++;
+            }
+        }
+        gap=
 
 
     }
